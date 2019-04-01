@@ -1092,12 +1092,4 @@ public class ContactsManager extends ReactContextBaseJavaModule implements Activ
         }
         updateContactCallback = null;
     }
-
-    /*
-     * Required for ActivityEventListener
-     */
-    @Override
-    public void onNewIntent(Intent intent) {
-    }
-
 }
