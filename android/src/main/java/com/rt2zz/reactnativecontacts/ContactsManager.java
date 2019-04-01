@@ -1093,11 +1093,6 @@ public class ContactsManager extends ReactContextBaseJavaModule implements Activ
         updateContactCallback = null;
     }
 
-    @Override
-    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
-        onActivityResult(requestCode, resultCode, data);
-    }
-
     /*
      * Required for ActivityEventListener
      */
