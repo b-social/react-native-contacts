@@ -1051,7 +1051,7 @@ public class ContactsManager extends ReactContextBaseJavaModule implements Activ
      * Required for ActivityEventListener
      */
     @Override
-    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode != REQUEST_OPEN_CONTACT_FORM && requestCode != REQUEST_OPEN_EXISTING_CONTACT) {
             return;
         }
@@ -1091,6 +1091,11 @@ public class ContactsManager extends ReactContextBaseJavaModule implements Activ
             updateContactCallback.invoke(e.getMessage(), null);
         }
         updateContactCallback = null;
+    }
+
+    @Override
+    public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
+        onActivityResult(requestCode, resultCode, data);
     }
 
     /*
